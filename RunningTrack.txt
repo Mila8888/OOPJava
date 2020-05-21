@@ -1,0 +1,17 @@
+package task1;
+
+public class RunningTrack extends Barrier {
+
+    private int length;
+
+    public RunningTrack(int length) {
+        this.length = length;
+    }
+
+
+    @Override
+    public void doIt(Participants particapant) {
+        particapant.jump(length);
+    }
+
+}

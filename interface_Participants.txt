@@ -1,0 +1,14 @@
+package task1;
+
+public interface Participants {
+
+    String name();
+    void run(int length);
+    void jump(int height);
+    boolean OnDistance = true;
+    boolean isOnDistance = false;
+
+    void info();
+
+}
+
