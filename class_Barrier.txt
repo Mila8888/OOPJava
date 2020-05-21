@@ -1,7 +1,0 @@
-package task1;
-
-public abstract class Barrier {
-
-    public abstract void doIt(Participants particapant);
-
-}
