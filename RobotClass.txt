@@ -1,46 +1,36 @@
-package task1;
+package test;
 
-public class RobotClass implements Participants {
+public class Robot implements Participant {
 
     private String name;
-    private int Limit;
-    private int Power;
+    private int limit;
+    private int power;
 
-    public RobotClass(String name, int limit, int power) {
+    public Robot(String name, int limit, int power) {
         this.name = name;
-        Limit = limit;
-        Power = power;
-        boolean isOnDistance = false;
+        this.limit = limit;
+        this.power = power;
+    }
+
+
+    @Override
+    public int run(int length) {
+        return limit;
     }
 
     @Override
-    public String name() {
-        return null;
+    public int jump(int height) {
+        return power;
     }
-
-    @Override
-    public void run(int length) {
-        if (length <= Limit) {
-            System.out.println("Робот " + name  + ": "+ OnDistance );
-        }else {
-            System.out.println("Робот " + name + ": " + isOnDistance );
-        }
-    }
-
-    @Override
-    public void jump(int height) {
-        if (height <= Power) {
-            System.out.println("Робот " + name + ": " + OnDistance );
-        }else {
-            System.out.println("Робот " + name + ": " + isOnDistance );
-        }
-    }
-
 
     @Override
     public void info() {
-        System.out.println("Робот " + name + " MAX пробежал " + Limit + " км" + " и MAX прыгнул " + Power + " м");
+        System.out.println("Робот " + name + " MAX пробежал " + limit + " км" + " и MAX прыгнул " + power + " м");
     }
 
+    @Override
+    public void conclusion() {
+        System.out.println("Робот прошел кросс");
+    }
 
 }

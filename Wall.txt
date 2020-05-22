@@ -1,6 +1,6 @@
-package task1;
+package test;
 
-public class Wall extends Barrier {
+public class Wall implements Barrier {
 
     private int height;
 
@@ -8,12 +8,9 @@ public class Wall extends Barrier {
         this.height = height;
     }
 
-
     @Override
-    public void doIt(Participants particapant) {
-        particapant.jump(height);
+    public boolean allBarrier(Participant participant) {
+        return participant.run(height) >= height;
+
     }
-
-
-
 }

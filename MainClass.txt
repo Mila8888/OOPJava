@@ -1,31 +1,36 @@
-package task1;
+package test;
 
-import static task1.Participants.OnDistance;
 
-public class MainClass {
+public class Main {
     public static void main(String[] args) {
 
-        HumanClass human = new HumanClass("Вася", 40, 3);
-        CatClass cat = new CatClass("Барсик", 100, 10);
-        RobotClass robot = new RobotClass("Валли", 200, 20);
+        Human human = new Human("Вася", 40, 3);
+        Cat cat = new Cat("Барсик", 100, 10);
+        Robot robot = new Robot("Валли", 200, 20);
 
-        Participants[] myParticapant = { human,  cat,  robot};
+        Participant[] myParticapant = {human, cat, robot};
 
-        for (Participants c : myParticapant)
+        for (Participant c : myParticapant) {
             c.info();
+        }
 
         Barrier wall1 = new Wall(3);
-        Barrier track1 = new RunningTrack(80);
-        Barrier wall2 = new Wall(10);
+        Barrier track1 = new RunningTrack(50);
+        Barrier wall2 = new Wall(3);
 
-
-        Barrier[] allbarrier = {wall1, track1, wall2};
+        Barrier[] barrier = {wall1, track1, wall2};
 
         System.out.println();
 
-        for (Participants c : myParticapant) {
-            for (Barrier a : allbarrier) {
-                    a.doIt(c);
+
+        outer: for (Participant c : myParticapant) {
+            for (Barrier a : barrier) {
+                boolean result = a.allBarrier(c);
+                    if( a.allBarrier(c) == false )  {
+                     break outer;
+                    }else {
+                        c.conclusion();
+                    }
             }
         }
 

@@ -1,7 +1,5 @@
-package task1;
+package test;
 
-public abstract class Barrier {
-
-    public abstract void doIt(Participants particapant);
-
+public interface Barrier {
+    boolean allBarrier(Participant participant);
 }

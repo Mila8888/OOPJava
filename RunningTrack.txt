@@ -1,6 +1,6 @@
-package task1;
+package test;
 
-public class RunningTrack extends Barrier {
+public class RunningTrack implements Barrier {
 
     private int length;
 
@@ -8,10 +8,9 @@ public class RunningTrack extends Barrier {
         this.length = length;
     }
 
-
     @Override
-    public void doIt(Participants particapant) {
-        particapant.jump(length);
-    }
+    public boolean allBarrier(Participant participant) {
+        return participant.run(length) >= length;
 
+    }
 }

@@ -1,44 +1,34 @@
-package task1;
+package test;
 
-public class HumanClass implements Participants {
+public class Human implements Participant {
 
-        private String name;
-        private int Limit;
-        private int Power;
+    private String name;
+    private int limit;
+    private int power;
 
-    public HumanClass(String name, int limit, int power) {
+    public Human(String name, int limit, int power) {
         this.name = name;
-        Limit = limit;
-        Power = power;
+        this.limit = limit;
+        this.power = power;
+    }
+
+
+    @Override
+    public int run(int length) {
+        return limit;
     }
 
     @Override
-        public String name() {
-            return null;
-        }
+    public int jump(int height) {
+        return power;
+    }
+    @Override
+    public void info() {
+        System.out.println("Человек " + name + " MAX пробежал " + limit + " км" + " и MAX прыгнул " + power + " м");
+    }
 
-        @Override
-        public void run(int length) {
-            if (length <= Limit) {
-                System.out.println("Человек " + name + ": " + OnDistance );
-            } else {
-                System.out.println("Человек " + name + ": " + isOnDistance );
-            }
-        }
-
-        @Override
-        public void jump(int height) {
-            if (height <= Power) {
-                System.out.println("Человек  " + name + ": "+ OnDistance );
-            }else {
-                System.out.println("Человек " + name + ": " + isOnDistance );
-            }
-        }
-
-
-        @Override
-        public void info() {
-            System.out.println("Человек " + name + " MAX пробежал " + Limit + " км" + " и MAX прыгнул " + Power + " м");
-        }
-
+    @Override
+    public void conclusion() {
+        System.out.println("Человек прошел кросс");
+    }
 }
